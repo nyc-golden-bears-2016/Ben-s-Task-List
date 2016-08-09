@@ -1,0 +1,22 @@
+<div class="text-container">
+  <% if flash[:notice] %>
+    <p class="flash-notice"><%= flash[:notice] %></p>
+  <% end %>
+<h2>LOGIN:</h2>
+
+<%= form_for :user, url: '/sessions' do |f| %>
+
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <%= f.submit "Submit" %>
+
+<% end %>
+<p> Don't Have an Account? <a href='/users/new'>Sign Up Here</a>
+</div>
