@@ -1,0 +1,13 @@
+<% if flash[:notice] %>
+    <p class="flash-notice"><%= flash[:notice] %></p>
+  <% end %>
+<% if @errands %>
+  <% @errands.each do |errand| %>
+    <%= form_for errand do |f| %>
+    <%= f.label :description %>
+    <%= f.check_box :completed %><br>
+    <%= f.submit %>
+    <%end%>
+  <%end%>
+<%end%>
+<a href='/errands/new'>Create a New Task</a>
